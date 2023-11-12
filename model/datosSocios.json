@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ahsoka",
+    "apellido": "Tano"
+  },
+  {
+    "id": 2,
+    "nombre": "Anakin",
+    "apellido": "Skywalker"
+  },
+  {
+    "id": 3,
+    "nombre": "Han",
+    "apellido": "Solo"
+  },
+  {
+    "id": 4,
+    "nombre": "Boba",
+    "apellido": "Fett"
+  },
+  {
+    "id": 5,
+    "nombre": "Kylo",
+    "apellido": "Ren"
+  }
+]

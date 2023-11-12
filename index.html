@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sergio Moreno - smoreno@birt.eus" />
+    <meta name="description" content="DWEC - UD02 - Tarea Evaluativa" />
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- estilos: bulma.io y propios -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <title>Gestión Socios - DWEC02-TE</title>
+  </head>
+
+  <body class="container content">
+
+    <header class="section notification mt-5">
+      <h1 class="title is-1 has-text-centered	">Gestión de Socios</h1>
+      <h2 class="subtitle has-text-centered	has-text-grey">Tarea Evaluativa
+        DWEC02</h2>
+    </header>
+
+    <div class="columns">
+      <!-- EJERCICIO 1 - Añadir Socios -->
+      <div class="column is-one-third">
+        <div class="box has-background-custom" id="contAniadirSocio">
+          <h2 class="title is-4 has-text-centered">Ejercicio 1 - Añadir Socios</h2>
+          <!-- Contenedor que alberga el formulario de introduccion de datos -->
+          <form id="formNombre" class="field">
+            <label for="fnombre">Nombre:</label><br />
+            <input class="input mb-3" type="text" id="fnombre" name="nombre"
+              value="Sergio" /><br />
+            <label for="fapellido">Apellido:</label><br />
+            <input class="input" type="text" id="fapellido" name="apellido"
+              value="Moreno" /><br /><br />
+            <input class="button is-warning" type="button" id="butAniadirSocio"
+              value="Añadir"
+              onclick="capturarDatosSocio()" />
+          </form>
+        </div>
+      </div>
+
+      <!-- EJERCICIO 2 - Pintar Socios -->
+      <div class="column">
+        <div class="content p-4">
+          <h2 class="title is-4">Ejercicio 2 - Pintar socios en la Web</h2>
+          <div id="contenedorBotonSocios">
+            <input class="button is-warning" type="button" id="butPintarSocios"
+              value="Pintar Lista Socios"
+              onclick="pintarListaSocios()" />
+          </div>
+          <div id="contenedorPintarSocios"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer is-primary">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Sergio Moreno</strong>
+          [<a href="mailto:smoreno@birt.eus">smoreno.birt.eus</a>] <> The source
+          code is available on
+          <a href="https://github.com/s-moreno/Moreno_Sanchez_Sergio_DWEC02"
+            target="_blank">Github</a>
+        </p>
+        <p><a href="https://bulma.io" target="_blank">
+            <img src="https://bulma.io/images/made-with-bulma--semiblack.png"
+              alt="Made with Bulma" width="128" height="24">
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!--------- JavaScript -------------->
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+
+</html>

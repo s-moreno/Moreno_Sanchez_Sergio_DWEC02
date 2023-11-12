@@ -1,0 +1,11 @@
+.has-background-custom {
+  background-color: lightblue;
+}
+
+.not-dott {
+  list-style: none !important;
+}
+
+li:nth-child(even) {
+  background-color: rgb(245, 245, 245);
+}
