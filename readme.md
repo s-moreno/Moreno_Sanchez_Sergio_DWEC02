@@ -16,3 +16,4 @@ Vamos a realizar una página web de gestión de socios, a través de la que podr
 
 + CSS framework: [bulmai.io](https://bulma.io)
 + Favicon: [iconos8](https://iconos8.es/)
++ Iconos: [ionicons](https://ionic.io/ionicons)
