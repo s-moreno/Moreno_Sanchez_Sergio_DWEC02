@@ -48,18 +48,47 @@
           </div>
         </form>
       </div>
+      <!-- Eliminar un socio a través de su ID -->
+      <div class="box" id="contEliminarSocio">
+        <h2 class="title is-4 has-text-centered">Eliminar Socio</h2>
+        <form id="formID">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label for="fid" class="label">ID:</label>
+            </div>
+            <div class="field-body">
+              <input type="text" class="input" id="fid" name="id" placeholder="ID del socio a eliminar">
+            </div>
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <button class="button is-danger is-danger" type="button" id="butAniadirSocio"
+              onclick="eliminarSocio()">
+              <span>Eliminar</span>
+              <span class="icon">
+                <ion-icon name="trash-outline"></ion-icon>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- EJERCICIO 2 - Pintar Socios -->
     <div class="column">
       <div class="content p-4">
         <h2 class="title is-4">Ejercicio 2 - Pintar socios en la Web</h2>
-        <div id="contenedorBotonSocios">
-          <button class="button is-warning" type="button" id="butPintarSocios" onclick="pintarListaSocios()">
+        <div id="contenedorBotonSocios" class="buttons">
+          <button class="button is-primary" type="button" id="butPintarSocios" onclick="pintarListaSocios()">
             <span class="icon">
-              <ion-icon name="reader-outline"></ion-icon>
+              <ion-icon name="eye-outline"></ion-icon>
             </span>
-            <span>Pintar Lista Socios</span>
+            <span>Mostrar Lista Socios</span>
+          </button>
+          <button class="button is-danger is-light" type="button" id="butBorrarSocios" onclick="borrarListaSocios()">
+            <span class="icon">
+              <ion-icon name="eye-off-outline"></ion-icon>
+            </span>
+            <span>Ocultar Lista Socios</span>
           </button>
         </div>
         <div id="contenedorPintarSocios"></div>

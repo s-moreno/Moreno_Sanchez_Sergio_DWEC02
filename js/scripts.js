@@ -10,6 +10,9 @@ const contenedorEscribirSocios = document.getElementById(
   "contenedorPintarSocios"
 );
 
+// capturamos el formulario de eliminación de socios
+const formID = document.querySelector("#formID");
+
 // Array para añadir los socios
 var arraySocios = [];
 
@@ -89,13 +92,11 @@ function crearID() {
   para pintar socios, recorre el array con un bucle y pinta los socios 
 */
 function pintarListaSocios() {
-  let htmlPintar = "";
-
   //borramos todo lo que hay en el div
-  contenedorEscribirSocios.innerHTML = htmlPintar;
+  borrarListaSocios();
 
   // creamos la estructura html (lista ordenada) con todos los datos socios
-  htmlPintar = "<ul class=\"not-dott is-italic is-family-monospace	\">";
+  let htmlPintar = '<ul class="not-dott is-italic is-family-monospace	">';
   for (let socio of arraySocios) {
     htmlPintar += `<li>Socio número ${socio.id}: ${socio.nombre} ${socio.apellido}.</li>`;
   }
@@ -103,6 +104,40 @@ function pintarListaSocios() {
 
   //Añadir los socios a la pagina web
   contenedorEscribirSocios.innerHTML = htmlPintar;
+}
+
+/*
+  Método que elimina la lista previamente pintada en el contenedor asignado 
+*/
+function borrarListaSocios() {
+  contenedorEscribirSocios.innerHTML = "";
+}
+
+// EJERCICIO EXTRA : ELIMINAR SOCIO CON SU ID
+
+function eliminarSocio() {
+  let indice;
+
+  // obtenemos el el id del socio a eliminar
+  let idSocio = formID.querySelector("#fid").value;
+
+  // controlamos que el id introducido sea correcto
+  if (idSocio !== "" && idSocio >= 0 && idSocio <= arraySocios.length) {
+    //eliminamos el elemento del array
+    indice = idSocio - 1;
+    arraySocios.splice(indice, 1);
+
+    // actualizamos el resto de IDs de socios
+    for (let i = indice; i < arraySocios.length; i++) {
+      arraySocios[i].id = i + 1;
+    }
+
+    // pintamos en la web los socios que quedan en la lista
+    console.log("Array Socio", arraySocios);
+    pintarListaSocios();
+  } else {
+    alert("El número de socio no existe");
+  }
 }
 
 // ------------------- MAIN ------------------------
