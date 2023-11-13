@@ -75,6 +75,18 @@ function crearSocio(nombre, apellido) {
   // Añadir el objeto 'socio' al array de socios
   arraySocios.push(socio);
   console.log("Array Socios", arraySocios);
+
+  // pintamos en la web el socio que ha sido creado
+  let mensajeHtml = '<article class="message is-success">'
+  mensajeHtml += '<div class="message-header">'
+  mensajeHtml += 'Socio añadido'
+  mensajeHtml += '<button class="delete" aria-label="delete" onclick="borrarListaSocios()"></button>'
+  mensajeHtml += '</div>'
+  mensajeHtml += '<div class="message-body">'
+  mensajeHtml += `<b>${socio.nombre} ${socio.apellido}</b> ha sido añadido con <b>ID ${socio.id}</b>.`
+  mensajeHtml += '</div>'
+  mensajeHtml += '</article>'
+  contenedorEscribirSocios.innerHTML = mensajeHtml
 }
 
 /*
@@ -123,8 +135,21 @@ function eliminarSocio() {
 
   // controlamos que el id introducido sea correcto
   if (idSocio !== "" && idSocio >= 0 && idSocio <= arraySocios.length) {
-    //eliminamos el elemento del array
     indice = idSocio - 1;
+
+    // pintamos en la web el socio que ha sido eliminado
+    let mensajeHtml = '<article class="message is-info">'
+    mensajeHtml += '<div class="message-header">'
+    mensajeHtml += 'Socio eliminado'
+    mensajeHtml += '<button class="delete" aria-label="delete" onclick="borrarListaSocios()"></button>'
+    mensajeHtml += '</div>'
+    mensajeHtml += '<div class="message-body">'
+    mensajeHtml += `<b>${arraySocios[indice].nombre} ${arraySocios[indice].apellido}</b> ha sido eliminado.`
+    mensajeHtml += '</div>'
+    mensajeHtml += '</article>'
+    contenedorEscribirSocios.innerHTML = mensajeHtml
+    
+    //eliminamos el elemento del array
     arraySocios.splice(indice, 1);
 
     // actualizamos el resto de IDs de socios
@@ -132,9 +157,8 @@ function eliminarSocio() {
       arraySocios[i].id = i + 1;
     }
 
-    // pintamos en la web los socios que quedan en la lista
     console.log("Array Socio", arraySocios);
-    pintarListaSocios();
+
   } else {
     alert("El número de socio no existe");
   }
